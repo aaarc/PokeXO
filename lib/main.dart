@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'logic_and_mons.dart';
+
 
 int  pkm_count=0;
 void main()
