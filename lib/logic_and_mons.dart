@@ -1,3 +1,4 @@
+import 'dart:math';
 class Logic_of_XO
 {
   int _make_default_move(var arr)
@@ -148,7 +149,84 @@ class Logic_of_XO
 }
 class mons_of_gme
 {
-  var mon_name;
-  var mon_img_link;
+  var pkm_info={"name":["pkm list to be inserted"],"info":["pkm info list to inserted"],"img_link":["img links to be inserted"],"shiny_img_links":["shiny_img_link to be inserted"]};
+
+  bool shiny_calc(var res)/** this function takes result of xo match as a paramater(input type bool) ,gives result as is shiny or not(return type bool)*/
+  {
+    var rate=8;
+    var rdm=Random();
+    var a;
+    if(res)
+      {
+        a=rdm.nextInt(20);
+      }
+    else
+      {
+        a=rdm.nextInt(75);
+      }
+    if(a==rate)
+    {
+      return true;
+    }
+    else
+      {
+        return false;
+      }
+  }
+
+  int type_of_mon(var res)
+  /** this function takes result of xo match as a paramater(input type bool) ,result: gives the type of pokemon based on input(return type int
+   * returns 0--> normal pokemon
+   * returns 1-->starter pokemon
+   * returns 2-->legendary pokemon
+   * returns 3-->pesudo-legendary pokemon
+   *
+   * )*/
+  {
+    int a;
+    var rdm=Random();
+    if(res)
+      {
+        a=rdm.nextInt(10);
+        if(a>=0 && a<=4)
+          {
+            return 1;// starter mon
+          }
+        else if(a>4 && a<=8)
+          {
+            return 3;// pesudo legend mon
+          }
+        else if(a>8 && a<=10)
+          {
+            return 2;// legendary mon
+          }
+        else
+          {
+            return 0;
+          }
+      }
+    else {
+      a = rdm.nextInt(30);
+      if (a >= 0 && a <= 18) {
+        return 0;
+      }
+      else if(a > 18 && a <= 24)
+      {
+        return 1;
+      }
+      else if(a>24 && a<=30)
+        {
+          return 3;
+        }
+      else
+        {
+          return 2;
+        }
+    }
+  }
+
+
+
+
 
 }
