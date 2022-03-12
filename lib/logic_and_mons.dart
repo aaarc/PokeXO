@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math';// for math operations,random
 class Logic_of_XO
 {
   int _make_default_move(var arr)
